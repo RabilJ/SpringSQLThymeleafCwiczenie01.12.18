@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body class="container">
+<h1 th:text="|Dodaj nową ofertę|"></h1>
+    <form th:object="${offer}" method="post" th:action="@{/zapisz}">
+        <div class="form-group">
+            <label for="productInput">Nazwa produktu</label>
+            <input th:field ="*{productName}" type="text" class="form-control" id="productInput" placeholder="Nazwa produktu">
+        </div>
+        <div class="form-group">
+            <label for="originalPrice">Cena oryginalna</label>
+            <input th:field ="*{originalPrice}"type="text" class="form-control" id="originalPrice" placeholder="Cena przed">
+        </div>
+        <div class="form-group">
+            <label for="discountedPrice">Cena po promocji</label>
+            <input th:field ="*{discountedPrice}" type="text" class="form-control" id="discountedPrice" placeholder="Cena po">
+        </div>
+        <div class="form-group">
+            <label for="shop">Sklep</label>
+            <input th:field ="*{shop}" type="text" class="form-control" id="shop" placeholder="Sklep">
+        </div>
+
+        <div class="form-group">
+            <label for="untilDate">Termin</label>
+            <input  th:field ="*{untilDate}" type="text" class="form-control" id="untilDate" placeholder="Data końca promocji">
+        </div>
+        <input type="submit" value="Zapisz">
+
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
